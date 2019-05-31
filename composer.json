@@ -1,6 +1,6 @@
 {
     "name": "linshunwei/laravel_redis_lbs",
-    "license": "GPL",
+    "license": "MIT",
     "authors": [
         {
             "name": "linshunwei",
