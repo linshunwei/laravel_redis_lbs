@@ -9,22 +9,15 @@ composer require linshunwei/laravel_redis_lbs
 ```php
 'providers' => [
     //...
-    Linshunwei\XunSearchLaravel\RedisLbsProvider::class,
+    Linshunwei\LaravelRedisLbs\RedisLbsProvider::class,
     //...
 ],
-
- //如果需要facade模式的话也可以开一下
-  'aliases' => [
-    ...
-    'LBSServer' => \LBS\Facade\LBSServer::class,
-    ...
-  ]
 ```
 
 
 然后执行
 ```
-php artisan vendor:publish --provider="Linshunwei\XunSearchLaravel\XunSearchServiceProvider"
+php artisan vendor:publish --provider="Linshunwei\LaravelRedisLbs\RedisLbsProvider"
 ```
 将生成 `config/redis_lbs.php` 配置文件，配置文件中的
 ```
