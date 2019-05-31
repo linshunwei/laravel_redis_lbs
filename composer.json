@@ -14,7 +14,6 @@
     },
     "autoload": {
         "classmap": ["src/"],
-        "files": ["src/helpers.php"],
         "psr-4": {
             "Linshunwei\\LaravelRedisLbs\\": "src/"
         }
