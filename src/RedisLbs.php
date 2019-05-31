@@ -63,7 +63,8 @@ class RedisLbs implements LbsInterface
 	{
 		$file = $config ?: include_once(__DIR__ . '/../config/config.php');
 		if (function_exists('config')) {
-			$file = $config ?: config('redis_lbs');
+			$file = config('redis_lbs');
+			$file = $config?array_merge($file, $config):$file;
 
 			if (isset($file['is_laravel']) && $file['is_laravel'] && isset($file['laravel_redis'])) {
 				$file['redis_connection'] = config("database.redis.{$file['laravel_redis']}");

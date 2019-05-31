@@ -29,28 +29,16 @@ php artisan vendor:publish --provider="Linshunwei\LaravelRedisLbs\RedisLbsProvid
 当 `is_laravel => true` 的时候， `laravel_redis => 'default'` 将调用 `config/database.php`下的redis相应的配置
 
 
-有以下三种使用方式
+使用方式
 ```
-1> $lbs = new \LBS\Services\LBSServer();
+use Linshunwei\LaravelRedisLbs\RedisLbs;
 
-2> public function __construct(LBSInterface $LBS)
-       {
-           $list = $LBS->list($LBS->geoset_name);
-   
-           dd($list);
-       }
-   }
-3> $search2 = \LBSServer::searchByMembers('fesco',500,'m');
+ $lbs = new RedisLbs();
+ $lbs->del('gao1');
 
 ```
 
 #基本操作
-
-## 初始化
-```
-require_once __DIR__.'/vendor/autoload.php';
-$lbs = new \LBS\Services\LBSService();
-```
 
 ## 添加
 ```
