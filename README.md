@@ -1,56 +1,18 @@
 # 安装
-需要使用composer，[安装composer](https://getcomposer.org/download/), [composer中国镜像](http://www.phpcomposer.com/)
+使用 composer
 
-如果是应用在项目当中的话找到根目录，需要和 `composer.json`同级
-
-```
-composer require gaopengfei/redis_lbs
+```shell
+composer require linshunwei/laravel_redis_lbs
 ```
 
-## 配置
-如果不是 `laravel` 框架的话，需要修改配置文件 `src/config/config.php`
-```
-  'geoset_name' => 'LBS_set',
-    'radium_option' => [
-        'WITHDIST' => true,
-        'SORT' => 'asc',
-        'WITHHASH' => false,
-    ],
-    'redis_connection' => [
-        'host'     => '127.0.0.1',      //连接地址
-        'port'     => 6379,             //端口
-        'database' => 1,                //库索引
-        'password' => null,             //密码
-    ],
+在配置文件中添加服务提供者（Laravel5.5 有自动添加）
+```php
+'providers' => [
+    //...
+    Linshunwei\XunSearchLaravel\RedisLbsProvider::class,
+    //...
+],
 
-```
-***但是***，如果是在 `vendor` 文件夹下修改就不能将它从版本库中移除了，所以也可以按照以上的格式写一个数组初始化的时候添加进去比如:
-```
-$config = [
-              'geoset_name' => 'LBS_set',         //集合名
-              'radium_option' => [                //搜寻附近的人的时候定义的一些参数
-                  'WITHDIST' => true,
-                  'SORT' => 'asc',
-                  'WITHHASH' => false,
-              ],
-              'redis_connection' => [
-                  'host'     => '127.0.0.1',      //连接地址
-                  'port'     => 6379,             //端口
-                  'database' => 1,                //库索引
-                  'password' => null,             //密码
-              ],
-          ];
- $lbs = new \LBS\Services\LBSService($config);
-```
-
-如果是 `laravel` 框架下，需要编辑 `config/app.php`
-```
- 'providers' => [
-    ...
-     \LBS\Provider\RedisLbsProvider::class,
-    ...
-  ],
- 
  //如果需要facade模式的话也可以开一下
   'aliases' => [
     ...
@@ -59,9 +21,10 @@ $config = [
   ]
 ```
 
+
 然后执行
 ```
-php artisan vendor:publish
+php artisan vendor:publish --provider="Linshunwei\XunSearchLaravel\XunSearchServiceProvider"
 ```
 将生成 `config/redis_lbs.php` 配置文件，配置文件中的
 ```

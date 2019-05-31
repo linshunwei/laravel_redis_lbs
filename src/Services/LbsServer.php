@@ -1,12 +1,12 @@
 <?php
-namespace LBS\Services;
-use LBS\Contracts\LBSInterface;
+namespace Linshunwei\LaravelRedisLbs\Services;
+use Linshunwei\LaravelRedisLbs\Contracts\LbsInterface;
 
 /**
  * 新建redis-lbs服务
  * 这里为了节省代码就把所有关于集合的值给设置了个默认的，输入顺序和redis api的有点区别
  */
-class LBSServer implements LBSInterface
+class LbsServer implements LbsInterface
 {
     protected static $redis = null;
 

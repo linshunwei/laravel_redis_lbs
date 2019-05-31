@@ -1,10 +1,10 @@
 {
-    "name": "gaopengfei/redis_lbs",
+    "name": "linshunwei/laravel_redis_lbs",
     "license": "GPL",
     "authors": [
         {
-            "name": "gaofeifiy",
-            "email": "5173180@qq.com"
+            "name": "linshunwei",
+            "email": "lsw.nba@163.com"
         }
     ],
     "require": {
@@ -16,7 +16,14 @@
         "classmap": ["src/"],
         "files": ["src/helpers.php"],
         "psr-4": {
-            "LBS\\": "src/"
+            "Linshunwei\\LaravelRedisLbs\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Linshunwei\\LaravelRedisLbs\\RedisLbsProvider"
+            ]
         }
     }
 }

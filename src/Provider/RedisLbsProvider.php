@@ -1,17 +1,9 @@
 <?php
-
-/**
- * Created by PhpStorm.
- * User: gaopengfei
- * Date: 2017/3/13
- * Time: 下午5:21
- */
-
-namespace LBS\Provider;
+namespace Linshunwei\LaravelRedisLbs\Provider;
 
 use Illuminate\Support\ServiceProvider;
-use LBS\Contracts\LBSInterface;
-use LBS\Services\LBSServer;
+use Linshunwei\LaravelRedisLbs\Contracts\LbsInterface;
+use Linshunwei\LaravelRedisLbs\Services\LbsServer;
 
 class RedisLbsProvider extends ServiceProvider
 {
@@ -30,9 +22,9 @@ class RedisLbsProvider extends ServiceProvider
     }
 
     public function register(){
-        $this->app->bind(LBSInterface::class,LBSServer::class);
+        $this->app->bind(LbsInterface::class,LbsServer::class);
         $this->app->singleton('LBSServer',function(){
-            return new LBSServer();
+            return new LbsServer();
         });
     }
 
@@ -43,7 +35,7 @@ class RedisLbsProvider extends ServiceProvider
      */
     public function provides()
     {
-        return [LBSInterface::class,'LBSServer'];
+        return [LbsInterface::class,'LBSServer'];
     }
 
 }

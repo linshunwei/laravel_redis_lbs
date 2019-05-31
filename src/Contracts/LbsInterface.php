@@ -1,14 +1,7 @@
 <?php
-namespace LBS\Contracts;
-/**
- * Created by PhpStorm.
- * User: gaopengfei
- * Date: 2017/3/10
- * Time: 下午7:06
- */
+namespace Linshunwei\LaravelRedisLbs\Contracts;
 
-
-interface LBSInterface
+interface LbsInterface
 {
     /**
      * 添加地址数据到集合
