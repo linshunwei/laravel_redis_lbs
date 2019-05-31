@@ -6,7 +6,7 @@ return [
     'laravel_redis' => 'default',
 
 
-    'geoset_name' => 'LBS_set',         //集合名
+    'geoset_name' => env('GEOSET_NAME', 'LBS'),         //集合名
     'radium_option' => [                //搜寻附近的人的时候定义的一些参数
         'WITHDIST' => true,
         'SORT' => 'asc',
