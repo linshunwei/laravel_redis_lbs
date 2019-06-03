@@ -13,9 +13,9 @@ return [
         'WITHHASH' => false,
     ],
     'redis_connection' => [
-        'host'     => '127.0.0.1',      //连接地址
-        'port'     => 6379,             //端口
-        'database' => 1,                //库索引
-        'password' => null,             //密码
+	    'host' => env('REDIS_LBS_HOST', '127.0.0.1'), //连接地址
+	    'password' => env('REDIS_LBS_PASSWORD', null),  //密码
+	    'port' => env('REDIS_LBS_PORT', 6379), //端口
+	    'database' => env('REDIS_LBS_DB', 1), //库索引
     ],
 ];
