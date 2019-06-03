@@ -1,7 +1,7 @@
 <?php
 return [
     //是否应用在laravel当中
-    'is_laravel' => false,
+    'is_laravel' => true,
     //使用laravel的redis版本
     'laravel_redis' => 'default',
 
