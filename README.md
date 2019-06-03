@@ -122,19 +122,19 @@ $search = $lbs->search('116.435182767868','39.91811857809279',500,'m');
 
 返回数组
 array:4 [▼
-  0 => array:2 [▼
+  0 => array:2 [
     "name" => "fesco"
     "dist" => "0.1250"
   ]
-  1 => array:2 [▼
+  1 => array:2 [
     "name" => "yabao_road"
     "dist" => "162.8454"
   ]
-  2 => array:2 [▼
+  2 => array:2 [
     "name" => "cofco"
     "dist" => "239.7758"
   ]
-  3 => array:2 [▼
+  3 => array:2 [
     "name" => "galaxy_soho"
     "dist" => "386.9165"
   ]
@@ -151,7 +151,7 @@ array:4 [▼
  * @param null $key     集合名
  * @return mixed
  */
-$search = $lbs->->searchByMembers('fesco',500,'m');
+$search = $lbs->searchByMembers('fesco',500,'m');
 
 返回数组
 array:4 [▼
